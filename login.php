@@ -4,8 +4,8 @@ if ($_SESSION["loggedin"]){
    //header( "Location: loremipsum.php" );
    echo "jsem tady";
 }
-$username = null;
-$password = null;
+$_SESSION["username"] = null;
+$_SESSION["password"] = null;
 $_SESSION["loggedin"] = false;
 ?>
 
