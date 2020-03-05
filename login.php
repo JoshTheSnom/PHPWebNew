@@ -23,7 +23,7 @@ $_SESSION["loggedin"] = false;
 
   
 <?php 
- if (($_POST["username"] == $username && ($_POST["password"] == $password)){
+ if (($_POST["username"] == $_SESSION["username"] && ($_POST["password"] == $_SESSION["password"])){
     $_SESSION["loggedin"] = true;
 	//header( "Location: loremipsum.php" );
 	echo "jsem tady2";
