@@ -1,34 +1,15 @@
 <?php 
 session_start();
-if ($_SESSION["loggedin"]){
-   //header( "Location: loremipsum.php" );
-   echo "jsem tady";
+if ($_SESSION["is_logged"]){
+   header( "Location: /loremipsum" );
+   die();
 }
-$_SESSION["username"] = null;
-$_SESSION["password"] = null;
-$_SESSION["loggedin"] = false;
 ?>
 
-<html>
-<head>
-</head>
-<body>
-
-<form method="post" >
-	<p>Name: <input type="text" name="username"></p>
-	<p>Password: <input type="text" name="password"></p>
-	<p><input type="submit"></p>
+<form action= "check" method="post" >
+    <p>Userame: <input type="text" name="name"></p>
+    <p>Password: <input type="password" name="pass"></p>
+    <button type="submit">Login</button>
 </form>
+
 <a href = "register.php">Register instead</a>
-
-  
-<?php 
- if (($_POST["username"] == $_SESSION["username"] && ($_POST["password"] == $_SESSION["password"])){
-    $_SESSION["loggedin"] = true;
-	//header( "Location: loremipsum.php" );
-	echo "jsem tady2";
- } else echo "Wrong username or password"
-
-?>
-</body>
-</html>
