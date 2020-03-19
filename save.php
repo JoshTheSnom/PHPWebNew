@@ -1,16 +1,20 @@
 <?php
+$file = "users.json";
+$arr_data = array();
+$formdata = array(
+    'username' => $_POST["username"],
+    'password' => $_POST["password"]
+);
+$jsondata = file_get_contents($file);
+$arr_data = json_decode($file, true);
+array_push($arr_data,$formdata);
 
-$userArray = json_decode(file_get_contents("users.txt"), true);
-$username = $_POST["username"]; 
-$password = $_POST["password"];
-if (!array_key_exists($username,$userArray)) {
-    $user = array($username => $password);
-    echo var_dump($user);
-    $users = fopen("users.txt", "w") or die("unable to write/create file");   
-    fwrite($users, json_encode(array_merge($userArray, $user)));
-    fclose($users);
+$jsondata = json_encode($arr_data, JSON_PRETTY_PRINT);
+if(file_put_contents($myFile, $jsondata)) {
     $_SESSION["is_logged"] = true;
-    header("Location: /loremipsum"); 
-} else echo "Username taken."
+    header( "Location: /loremipsum" );
+}
+else 
+    echo "error";
 
 ?>

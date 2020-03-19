@@ -7,8 +7,8 @@ if ($_SESSION["is_logged"]){
 ?>
 
 <form action= "check" method="post" >
-    <p>Userame: <input type="text" name="name"></p>
-    <p>Password: <input type="password" name="pass"></p>
+    <p>Userame: <input type="text" name="username"></p>
+    <p>Password: <input type="password" name="password"></p>
     <button type="submit">Login</button>
 </form>
 

@@ -3,24 +3,20 @@ $url = $_SERVER['REQUEST_URI'];
 
 switch ($url) {
     case '/login':
-        require __DIR__ . '/login.php';
+        $filename = 'login.php';
 		break;
 	case '/register':
-		require __DIR__ . '/register.php';
+		$filename = 'register.php';
 		break;
     case '/loremipsum':
-        require __DIR__ . '/loremipsum.php';
+        $filename = 'loremipsum.php';
         break;
     case '/logout':
-        require __DIR__ . '/logout.php';
-        break;
-    case '/check':
-        require __DIR__ . '/check.php';
-        break;
-    case '/save':
-        require __DIR__ . '/save.php';
+        $filename = 'logout.php';
         break;
     default:
-        require __DIR__ . '/notfound.php';
+        $filename = 'notfound.php';
         break;
 }
+
+require $filename;

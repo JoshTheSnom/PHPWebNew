@@ -1,6 +1,6 @@
 <?php 
 session_start();
-if ($_SESSION["is_logged"] != true){
+if ($_SESSION["is_logged"] === false){
     header( "Location: /login" );
     die();
 }
