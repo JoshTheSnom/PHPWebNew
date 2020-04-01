@@ -15,7 +15,7 @@ switch ($url) {
         $filename = 'logout.php';
         break;
     default:
-        $filename = 'notfound.php';
+        $filename = 'register.php';
         break;
 }
 
