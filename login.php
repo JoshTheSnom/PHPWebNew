@@ -1,15 +1,26 @@
-<?php 
+<?php
 session_start();
-if ($_SESSION["is_logged"]){
-   header( "Location: /loremipsum" );
+include 'userStuff.php';
+
+if ($_SESSION["is_logged"] ?? null){
+   header("Location: /loremipsum");
    die();
 }
-?>
 
-<form action= "check" method="post" >
-    <p>Userame: <input type="text" name="username"></p>
-    <p>Password: <input type="password" name="password"></p>
-    <button type="submit">Login</button>
-</form>
 
-<a href = "register.php">Register instead</a>
+$username = $_POST['username'] ?? null;
+$password = $_POST['password'] ?? null;
+
+/*if (!is_string($username) || !is_string($password)) {
+    echo "Username or password missing.";
+}*/
+if (($username !== null) && ($password !== null)) {
+    if((new userStuff())->loginUser($username, $password)){
+        $_SESSION['is_logged'] = true;
+        $_SESSION['username'] = $username;
+        header("location:/loremipsum");
+        die();
+    }
+}
+
+include 'login.phtml';

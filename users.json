@@ -1,6 +1,18 @@
 [
     {
-        "username": null,
-        "password": null
+        "username": "root",
+        "password": "yeetus"
+    },
+    {
+        "username": "jmeno",
+        "password": "heslo"
+    },
+    {
+        "username": "jmeno1",
+        "password": "heslo1"
+    },
+    {
+        "username": "jmeno1",
+        "password": "heslo1"
     }
 ]

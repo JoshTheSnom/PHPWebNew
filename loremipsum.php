@@ -1,11 +1,9 @@
 <?php 
 session_start();
-if ($_SESSION["is_logged"] === false){
+
+if (($_SESSION["is_logged"] ?? null) == false){
     header( "Location: /login" );
     die();
 }
-?>
-
-Lorem ipsum or something
-
-<a href= /logout>Logout</a>
+$username = $_SESSION['username'];
+include 'loremipsum.phtml';

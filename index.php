@@ -1,6 +1,6 @@
 <?php
 $url = $_SERVER['REQUEST_URI'];
-
+//die($url);
 switch ($url) {
     case '/login':
         $filename = 'login.php';
@@ -15,7 +15,7 @@ switch ($url) {
         $filename = 'logout.php';
         break;
     default:
-        $filename = 'register.php';
+        $filename = 'notfound.php';
         break;
 }
 
